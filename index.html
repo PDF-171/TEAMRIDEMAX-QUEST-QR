@@ -13,7 +13,7 @@
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: #fff url('TEAM-RIDEMAX.png') no-repeat center center fixed;
+      background: #fff url('https://pdf-171.github.io/TEAMRIDEMAX-QUEST/TEAM-RIDEMAX.png') no-repeat center center fixed;
       background-size: contain;
       background-blend-mode: lighten;
       color: #111;
@@ -28,13 +28,21 @@
       position: relative;
     }
 
-    /* 🔹 Semi-transparent background overlay for readability */
     body::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(255, 255, 255, 0.75); /* 25% opacity of background image */
+      background: rgba(255, 255, 255, 0.75); /* gives 25% opacity effect */
       z-index: 0;
+    }
+
+    .logo {
+      width: 70%;
+      max-width: 350px;
+      height: auto;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
     }
 
     main {
@@ -88,6 +96,9 @@
 </head>
 <body>
 
+  <!-- 🔹 Visible Logo -->
+  <img src="https://pdf-171.github.io/TEAMRIDEMAX-QUEST/TEAM-RIDEMAX.png" alt="Team Ridemax Logo" class="logo">
+
   <main>
     <h1>🎉 Congratulations! 🏆</h1>
     <p class="big-message">You won an instant Prize!<br>Claim at Team Ridemax Booth.</p>
@@ -100,7 +111,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script>
     function launchConfetti() {
-      const duration = 3 * 1000;
+      const duration = 3000;
       const end = Date.now() + duration;
       (function frame() {
         confetti({ particleCount: 8, angle: 60, spread: 55, origin: { x: 0 } });
