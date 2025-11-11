@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Ridemax Quest</title>
+  <style>
+    :root {
+      --red: #e00000;
+      --blue: #007bff;
+      --gray: #f7f7f7;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fff url('TEAM-RIDEMAX.png') no-repeat center center fixed;
+      background-size: contain;
+      background-blend-mode: lighten;
+      color: #111;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* 🔹 Semi-transparent background overlay for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.75); /* 25% opacity of background image */
+      z-index: 0;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+      max-width: 700px;
+      width: 100%;
+    }
+
+    h1 {
+      color: var(--red);
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .big-message {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 2rem;
+    }
+
+    .disclaimer {
+      font-style: italic;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #555;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #666;
+      z-index: 1;
+      position: relative;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.4rem;
+      }
+      .big-message {
+        font-size: 1.8rem;
+      }
+      .disclaimer {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <h1>🎉 Congratulations! 🏆</h1>
+    <p class="big-message">You won an instant Prize!<br>Claim at Team Ridemax Booth.</p>
+    <p class="disclaimer">*Prizes can be claimed after verification by our team!*</p>
+  </main>
+
+  <footer>© 2025 Team Ridemax Philippines</footer>
+
+  <!-- 🔹 Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    function launchConfetti() {
+      const duration = 3 * 1000;
+      const end = Date.now() + duration;
+      (function frame() {
+        confetti({ particleCount: 8, angle: 60, spread: 55, origin: { x: 0 } });
+        confetti({ particleCount: 8, angle: 120, spread: 55, origin: { x: 1 } });
+        if (Date.now() < end) requestAnimationFrame(frame);
+      })();
+    }
+    window.addEventListener('load', () => setTimeout(launchConfetti, 500));
+  </script>
+
+</body>
+</html>
