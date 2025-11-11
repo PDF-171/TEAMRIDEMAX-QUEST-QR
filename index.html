@@ -13,9 +13,7 @@
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: #fff url('https://pdf-171.github.io/TEAMRIDEMAX-QUEST/TEAM-RIDEMAX.png') no-repeat center center fixed;
-      background-size: contain;
-      background-blend-mode: lighten;
+      background: #fff;
       color: #111;
       margin: 0;
       padding: 0;
@@ -26,13 +24,16 @@
       justify-content: center;
       min-height: 100vh;
       position: relative;
+      overflow: hidden;
     }
 
+    /* 🔹 Background image fills screen with 50% opacity */
     body::before {
       content: "";
-      position: absolute;
+      position: fixed;
       inset: 0;
-      background: rgba(255, 255, 255, 0.75); /* gives 25% opacity effect */
+      background: url('https://pdf-171.github.io/TEAMRIDEMAX-QUEST/TEAM-RIDEMAX.png') no-repeat center center / cover;
+      opacity: 0.5; /* 50% visible */
       z-index: 0;
     }
 
@@ -51,6 +52,9 @@
       padding: 2rem;
       max-width: 700px;
       width: 100%;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 16px;
+      backdrop-filter: blur(4px);
     }
 
     h1 {
@@ -60,7 +64,7 @@
     }
 
     .big-message {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       font-weight: bold;
       color: #000;
       margin-bottom: 2rem;
@@ -83,7 +87,7 @@
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
       }
       .big-message {
         font-size: 1.8rem;
@@ -96,7 +100,7 @@
 </head>
 <body>
 
-  <!-- 🔹 Visible Logo -->
+  <!-- 🔹 Visible logo -->
   <img src="https://pdf-171.github.io/TEAMRIDEMAX-QUEST/TEAM-RIDEMAX.png" alt="Team Ridemax Logo" class="logo">
 
   <main>
